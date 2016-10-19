@@ -1,0 +1,10 @@
+{
+	"username" : "doorparty_ssh_username",
+	"password" : "doorparty_ssh_password",
+	"interface" : "localhost",
+	"port" : 513,
+	"SSHServer" : "dp.throwbackbbs.com",
+	"SSHPort" : 2022,
+	"RLoginServer" : "dp.throwbackbbs.com",
+	"RLoginPort" : 513
+}
