@@ -13,4 +13,17 @@
 	All other settings can be left at their default values.
 */
 
-bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias);
+load('sbbsdefs.js');
+
+var attr = console.attributes;
+console.clear(LIGHTGRAY);
+console.putmsg('Connecting to DoorParty, please wait ...');
+
+try {
+	bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias);
+} catch (err) {
+	log(LOG_ERR, err);
+}
+
+console.attributes = attr;
+console.clear();
