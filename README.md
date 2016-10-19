@@ -1,7 +1,7 @@
 # doorparty-connector
 Connect to DoorParty via RLogin through an SSH tunnel
 
-*** Install
+***Install
 
 ```sh
 git clone https://github.com/echicken/doorparty-connector.git
@@ -9,7 +9,7 @@ cd doorparty-connector
 npm install
 ```
 
-*** Configure
+***Configure
 
 Open *settings.json* in a text editor, and you'll see something like this:
 
