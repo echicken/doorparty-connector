@@ -1,7 +1,7 @@
 # doorparty-connector
 Connect to DoorParty via RLogin through an SSH tunnel
 
-***Install
+###Install
 
 ```sh
 git clone https://github.com/echicken/doorparty-connector.git
@@ -9,7 +9,7 @@ cd doorparty-connector
 npm install
 ```
 
-***Configure
+###Configure
 
 Open *settings.json* in a text editor, and you'll see something like this:
 
@@ -31,7 +31,7 @@ Open *settings.json* in a text editor, and you'll see something like this:
 - Change *port* to whatever port you wish to accept RLogin connections *from your BBS* on
 - The other settings can remain the same, unless DoorParty's remote configuration changes at some point
 
-*** Run
+###Run
 
 If you're listening to port 513 on the local machine, you'll either need to run
 with superuser privileges or work some redirection magic on the back end.
