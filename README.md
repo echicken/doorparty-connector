@@ -39,3 +39,21 @@ with superuser privileges or work some redirection magic on the back end.
 ```sh
 node index.js
 ```
+
+### Synchronet Configuration
+
+- Copy *sbbs-dp-rlogin.js* to your Synchronet 'mods' directory.
+
+- In SCFG ('exec/scfg', or BBS->Configure in Windows) create an external program:
+
+```
+	Name: DoorParty
+	Internal Code: DOORPRTY
+	Command Line: ?sbbs-dp-rlogin.js localhost password [tag]
+	Multiple Concurrent Users: Yes
+```
+
+- In the *Command Line* field:
+	- Replace 'password' with a random password of your own choosing
+	- Replace [tag] with your own DoorParty BBS tag, including square brackets
+- All other settings can be left at their default values.
