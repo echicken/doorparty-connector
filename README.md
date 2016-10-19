@@ -1,7 +1,5 @@
 # doorparty-connector
 
-###About
-
 This script listens for connections from RLogin clients, then establishes an SSH
 tunnel to a remote server, then connects the RLogin client to a remote RLogin
 server via the SSH tunnel.
@@ -17,8 +15,19 @@ this application.  It should work with node.js versions 4.x and greater, and
 should run equally well on Windows, Linux, OS X, or anywhere else that node.js
 runs.
 
+If you have *git* installed:
 ```sh
 git clone https://github.com/echicken/doorparty-connector.git
+```
+
+If you downloaded [the zip file](https://github.com/echicken/doorparty-connector/archive/master.zip) instead:
+```sh
+unzip doorparty-connector-master.zip
+mv doorparty-connector-master doorparty-connector
+```
+
+Now we can proceed:
+```sh
 cd doorparty-connector
 npm install
 ```
