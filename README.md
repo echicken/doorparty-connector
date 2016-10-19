@@ -1,6 +1,16 @@
 # doorparty-connector
 Connect to DoorParty via RLogin through an SSH tunnel
 
+###About
+
+This script listens for connections from RLogin clients, then establishes an SSH
+tunnel to a remote server, then connects the RLogin client to a remote RLogin
+server via the SSH tunnel.
+
+I can't imagine a use for it other than connecting an RLogin client to
+(DoorParty)[http://wiki.throwbackbbs.com/doku.php], but it could conceivably be
+used with any remote SSH & RLogin server.
+
 ###Install
 
 ```sh
@@ -44,7 +54,7 @@ node index.js
 
 - Copy *sbbs-dp-rlogin.js* to your Synchronet 'mods' directory.
 
-- In SCFG ('exec/scfg', or BBS->Configure in Windows) create an external program:
+- In SCFG, create an external program:
 
 ```
 	Name: DoorParty
@@ -57,3 +67,26 @@ node index.js
 	- Replace 'password' with a random password of your own choosing
 	- Replace [tag] with your own DoorParty BBS tag, including square brackets
 - All other settings can be left at their default values.
+
+Synchronet's RLogin gate feature does not allow us to specify a *port* to
+connect to on the RLogin server, so it will always try to connect to port 513.
+If your BBS is already listening for RLogin connections on port 513:
+
+- Edit *ctrl/sbbs.ini*
+- In the [BBS] section, change the *RLoginInterface* setting from *0.0.0.0* to the actual IP address of your BBS server (must be anything but *0.0.0.0* or *127.0.0.1*)
+
+This will free up port 513 on 127.0.0.1 so that *doorparty-connector* may bind
+to it.  Meanwhile your BBS will still be listening for external RLogin clients.
+
+- Restart Synchronet
+
+### Other Configurations
+
+This software can be used with BBS packages other than Synchronet.  It simply
+accepts connections from RLogin clients, sets up an SSH tunnel to DoorParty,
+then connects the client to the DoorParty RLogin server via the SSH tunnel.
+
+Use whatever method of initiating an RLogin connection your BBS software has to
+offer, or use an external program (door) that provides this functionality.  Tell
+it to connect to the *interface* and *port* that you have specified in
+*settings.json*.
