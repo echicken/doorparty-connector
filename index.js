@@ -4,7 +4,7 @@ const util = require('util');
 const SSHClient = require('ssh2').Client;
 
 try {
-	var settings = JSON.parse(fs.readFileSync('./settings.json', 'utf8'));
+	const settings = JSON.parse(fs.readFileSync('./settings.json', 'utf8'));
 } catch (err) {
 	console.log('Error reading settings', err);
 	process.exit();
