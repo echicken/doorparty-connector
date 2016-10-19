@@ -8,7 +8,7 @@ tunnel to a remote server, then connects the RLogin client to a remote RLogin
 server via the SSH tunnel.
 
 I can't imagine a use for it other than connecting an RLogin client to
-(DoorParty)[http://wiki.throwbackbbs.com/doku.php], but it could conceivably be
+[DoorParty](http://wiki.throwbackbbs.com/doku.php), but it could conceivably be
 used with any remote SSH & RLogin server.
 
 ###Install
