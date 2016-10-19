@@ -1,5 +1,4 @@
 # doorparty-connector
-Connect to DoorParty via RLogin through an SSH tunnel
 
 ###About
 
@@ -12,6 +11,11 @@ I can't imagine a use for it other than connecting an RLogin client to
 used with any remote SSH & RLogin server.
 
 ###Install
+
+You'll need to have node.js and npm installed on your system in order to use 
+this application.  It should work with node.js versions 4.x and greater, and
+should run equally well on Windows, Linux, OS X, or anywhere else that node.js
+runs.
 
 ```sh
 git clone https://github.com/echicken/doorparty-connector.git
