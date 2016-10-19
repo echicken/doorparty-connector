@@ -20,7 +20,7 @@ function onRlogin(client, rlogin) {
 
 	var sshTunnel = new SSHClient();
 
-	function onStream(err, stream) {
+	function onTunnel(err, stream) {
 
 		if (err) {
 			console.log('SSH tunnel error', err);
@@ -60,11 +60,11 @@ function onRlogin(client, rlogin) {
 
 	}
 
-	function onTunnel() {
+	function onReady() {
 		sshTunnel.forwardOut(
 			settings.interface, settings.SSHPort,
 			settings.RLoginServer, settings.RLoginPort,
-			onStream
+			onTunnel
 		);		
 	}
 
@@ -88,7 +88,7 @@ function onRlogin(client, rlogin) {
 		}
 	);
 	
-	sshTunnel.on('ready', onTunnel);
+	sshTunnel.on('ready', onReady);
 	
 	sshTunnel.connect(
 		{	host: settings.SSHServer,
