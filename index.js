@@ -1,10 +1,13 @@
 const fs = require('fs');
 const net = require('net');
 const util = require('util');
+const path = require('path');
 const SSHClient = require('ssh2').Client;
 
 try {
-	const settings = JSON.parse(fs.readFileSync('./settings.json', 'utf8'));
+	const settings = JSON.parse(
+		fs.readFileSync(path.join(__dirname, 'settings.json'), 'utf8')
+	);
 } catch (err) {
 	console.log('Error reading settings', err);
 	process.exit();
