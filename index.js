@@ -4,14 +4,7 @@ const util = require('util');
 const path = require('path');
 const SSHClient = require('ssh2').Client;
 
-try {
-	const settings = JSON.parse(
-		fs.readFileSync(path.join(__dirname, 'settings.json'), 'utf8')
-	);
-} catch (err) {
-	console.log('Error reading settings', err);
-	process.exit();
-}
+const settings = require(path.join(__dirname, 'settings.json'));
 
 function onRlogin(client, rlogin) {
 
