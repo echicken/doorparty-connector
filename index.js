@@ -4,13 +4,18 @@ const util = require('util');
 const path = require('path');
 const SSHClient = require('ssh2').Client;
 
-const settings = require(path.join(__dirname, 'settings.json'));
+// Stupid nexe tricks
+try {
+	var settings = require(path.join(__dirname, './settings.json'));
+} catch (err) {
+	var settings = require('./settings-loader.js');
+}
 
 function onRlogin(client, rlogin) {
 
 	var str = rlogin.toString().split(/\x00/);
-	if (str.length < 5) {
-		client.close();
+	if (str.length < 3) {
+		client.end();
 		return;
 	}
 
