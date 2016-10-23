@@ -93,6 +93,10 @@ with superuser privileges or work some redirection magic on the back end.
 node index.js
 ```
 
+In the long term, you may wish to consider using a node.js process manager such as
+[forever](https://github.com/foreverjs/forever) or [pm2](http://pm2.keymetrics.io/)
+launch DoorParty Connector and keep it running.
+
 ## Synchronet Configuration
 
 - Place a copy of [sbbs-dp-rlogin.js](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.js?raw=true) in your Synchronet 'mods' directory
