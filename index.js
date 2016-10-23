@@ -4,7 +4,11 @@ const util = require('util');
 const path = require('path');
 const SSHClient = require('ssh2').Client;
 
-// Stupid nexe tricks
+/*	Stupid nexe tricks
+	Delete 'settings.json' from the 'doorparty-connector' directory when
+	building with nexe; this will prevent the default settings file from being
+	included in the bundle.  A 'settings.json' file must exist in the working
+	directory of the executable, and will then be loaded at runtime. */
 try {
 	var settings = require(path.join(__dirname, './settings.json'));
 } catch (err) {
