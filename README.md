@@ -8,9 +8,7 @@ I can't imagine a use for it other than connecting an RLogin client to
 [DoorParty](http://wiki.throwbackbbs.com/doku.php), but it could conceivably be
 used with any remote SSH & RLogin server.
 
-###Install
-
-####Windows installer
+##Windows Setup
 
 [An installer is available](https://github.com/echicken/doorparty-connector/blob/master/dpc-installer.exe?raw=true)
 for Windows users.  This will download the latest copy of
@@ -19,7 +17,26 @@ and
 [settings.json](https://github.com/echicken/doorparty-connector/blob/master/settings.json?raw=true)
 and will set the program to launch as a startup item.
 
-####Manual installation
+If the installer succeeds, DoorParty Connector will be launched immediately. You
+can skip the entire *Manual Setup* section in that case.
+
+Note that you will still need to configure your BBS to connect to DoorParty
+Connector.  Examples are provided below.
+
+If you make a mistake when entering your settings, or need to change them later
+on, you can simply run the installer again, or edit
+C:\Program Files (x86)\DoorParty Connector\settings.json
+to make changes manually.
+
+An uninstaller is provided at 
+C:\Program Files (x86)\DoorParty Connector\uninstall.exe.
+
+##Manual Setup
+
+If you're not running Windows, or if the installer fails for some reason, manual
+installation is also possible.
+
+###Prepare
 
 You'll need to have node.js and npm installed on your system in order to use 
 this application.  It should work with node.js versions 4.x and greater, and
@@ -36,6 +53,8 @@ If you downloaded [the zip file](https://github.com/echicken/doorparty-connector
 unzip doorparty-connector-master.zip
 mv doorparty-connector-master doorparty-connector
 ```
+
+###Install
 
 Now we can proceed:
 ```sh
@@ -74,9 +93,9 @@ with superuser privileges or work some redirection magic on the back end.
 node index.js
 ```
 
-### Synchronet Configuration
+## Synchronet Configuration
 
-- Copy *sbbs-dp-rlogin.js* to your Synchronet 'mods' directory.
+- Place a copy of [sbbs-dp-rlogin.js](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.js?raw=true) in your Synchronet 'mods' directory
 
 - In SCFG, create an external program:
 
@@ -104,11 +123,23 @@ to it.  Meanwhile your BBS will still be listening for external RLogin clients.
 
 - Restart Synchronet
 
-### Other Configurations
+## Mystic Configuration
 
-This software can be used with BBS packages other than Synchronet.  It simply
-accepts connections from RLogin clients, sets up an SSH tunnel to DoorParty,
-then connects the client to the DoorParty RLogin server via the SSH tunnel.
+- Launch the Mystic configuration editor
+- Go to Editors
+- Pick the theme you wish to edit
+- Pick the menu you wish to edit
+- Add or modify a menu item
+- Select *D3* for the command
+- Enter this as the *DATA*, where 'localhost' and 'port' are the address and port that DoorParty Connector is listening on, where '[tag]' is your DoorParty BBS tag, including square brackets, and where 'password' is a random password of your choosing
+	- /ADDR=localhost:port /USER=[tag]@USER@ /PASS=password
+- Save and exit
+
+## Other Configurations
+
+This software simply accepts connections from RLogin clients, sets up an SSH
+tunnel to DoorParty, then connects the client to the DoorParty RLogin server via
+the SSH tunnel.
 
 Use whatever method of initiating an RLogin connection your BBS software has to
 offer, or use an external program (door) that provides this functionality.  Tell
