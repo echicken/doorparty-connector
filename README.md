@@ -108,7 +108,7 @@ launch DoorParty Connector and keep it running.
 ## Synchronet Configuration
 
 - Place a copy of [sbbs-dp-rlogin.js](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.js?raw=true) in your Synchronet 'mods' directory
-	- If you do not already have a 'mods' directory, create one at the top level of your Synchronet BBS installation (along side 'ctrl', 'data', 'exec', etc.)
+	- If you do not already have a 'mods' directory, create one at the top level of your Synchronet BBS installation (alongside 'ctrl', 'data', 'exec', etc.)
 
 - In SCFG, create an external program:
 
