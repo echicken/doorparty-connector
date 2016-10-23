@@ -8,7 +8,7 @@ const SSHClient = require('ssh2').Client;
 try {
 	var settings = require(path.join(__dirname, './settings.json'));
 } catch (err) {
-	var settings = require('./settings-loader.js');
+	var settings = global.require('./settings.json');
 }
 
 function onRlogin(client, rlogin) {
