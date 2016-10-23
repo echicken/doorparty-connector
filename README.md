@@ -162,6 +162,14 @@ offer, or use an external program (door) that provides this functionality.  Tell
 it to connect to the *interface* and *port* that you have specified in
 *settings.json*.
 
+##Notes
+
+These instructions assume that you want to run DoorParty Connector on the same
+machine that is hosting your BBS.  There is however no technical requirement
+that you do so.  If you choose to run DoorParty Connector on another server, you
+can simply tell your BBS software or RLogin door to connect to an address and
+port of your choosing.
+
 ## Disclaimer
 
 This software is provided without any warranty.  By installing it, you agree to
