@@ -10,6 +10,17 @@ used with any remote SSH & RLogin server.
 
 ###Install
 
+####Windows installer
+
+[An installer is available](https://github.com/echicken/doorparty-connector/blob/master/dpc-installer.exe?raw=true)
+for Windows users.  This will download the latest copy of
+[doorparty-connector.exe](https://github.com/echicken/doorparty-connector/blob/master/doorparty-connector.exe?raw=true)
+and
+[settings.json](https://github.com/echicken/doorparty-connector/blob/master/settings.json?raw=true)
+and will set the program to launch as a startup item.
+
+####Manual installation
+
 You'll need to have node.js and npm installed on your system in order to use 
 this application.  It should work with node.js versions 4.x and greater, and
 should run equally well on Windows, Linux, OS X, or anywhere else that node.js
