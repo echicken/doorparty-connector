@@ -130,7 +130,7 @@ If your BBS is already listening for RLogin connections on port 513:
 - Edit *ctrl/sbbs.ini*
 - In the [BBS] section, change the *RLoginInterface* setting from *0.0.0.0* to the actual IP address of your BBS server (must be anything but *0.0.0.0* or *127.0.0.1*)
 
-This will free up port 513 on 127.0.0.1 so that *doorparty-connector* may bind
+This will free up port 513 on 127.0.0.1 so that DoorParty Connector may bind
 to it.  Meanwhile your BBS will still be listening for external RLogin clients.
 
 - Restart Synchronet
@@ -146,6 +146,9 @@ to it.  Meanwhile your BBS will still be listening for external RLogin clients.
 - Enter this as the *DATA*, where 'localhost' and 'port' are the address and port that DoorParty Connector is listening on, where '[tag]' is your DoorParty BBS tag, including square brackets, and where 'password' is a random password of your choosing
 	- /ADDR=localhost:port /USER=[tag]@USER@ /PASS=password
 - Save and exit
+
+(I haven't tested these instructions; they are a variation on DoorParty's Mystic
+setup instructions, adapted for use with DoorParty Connector.  YMMV.)
 
 ## Other Configurations
 
