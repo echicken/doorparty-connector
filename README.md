@@ -145,3 +145,18 @@ Use whatever method of initiating an RLogin connection your BBS software has to
 offer, or use an external program (door) that provides this functionality.  Tell
 it to connect to the *interface* and *port* that you have specified in
 *settings.json*.
+
+## Disclaimer
+
+This software is provided without any warranty.  By installing it, you agree to
+hold the author blameless if it somehow destroys your computer, your BBS, or
+causes any other problems for you.  No guarantee is made that there will be
+doors or that said doors will be having a party, or that there will be a general
+party atmosphere amongst the users of said doors, or indeed that there will be
+users at all.  Additionally, no guarantee is made that DoorParty Connector will
+connect you to DoorParty or to a door party or a party of doors or a party for
+door game players.
+
+The author of this software is not the owner, operator, or administrator of
+DoorParty.  If you have questions about DoorParty, contact maskreet on 
+[Throwback BBS](http://www.throwbackbbs.com/).
