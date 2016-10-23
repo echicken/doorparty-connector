@@ -36,6 +36,14 @@ C:\Program Files (x86)\DoorParty Connector\uninstall.exe.
 If you're not running Windows, or if the installer fails for some reason, manual
 installation is also possible.
 
+Windows users may be able to get away with simply downloading
+[doorparty-connector.exe](https://github.com/echicken/doorparty-connector/blob/master/doorparty-connector.exe?raw=true)
+and
+[settings.json](https://github.com/echicken/doorparty-connector/blob/master/settings.json?raw=true).
+Place them in the same directory, edit *settings.json* as necessary, and then
+launch *doorparty-connector.exe*.  Otherwise, follow these next steps:
+
+
 ###Prepare
 
 You'll need to have node.js and npm installed on your system in order to use 
