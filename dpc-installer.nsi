@@ -8,7 +8,7 @@ XPStyle on
 
 Var Dialog
 Var Username
-var Password
+Var Password
 Var RLoginInterface
 Var RLoginPort
 Var SSHServer
