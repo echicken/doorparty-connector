@@ -103,7 +103,7 @@ node index.js
 
 In the long term, you may wish to consider using a node.js process manager such as
 [forever](https://github.com/foreverjs/forever) or [pm2](http://pm2.keymetrics.io/)
-launch DoorParty Connector and keep it running.
+to launch DoorParty Connector and keep it running.
 
 ## Synchronet Configuration
 
