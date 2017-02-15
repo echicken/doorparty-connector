@@ -20,7 +20,11 @@ console.clear(LIGHTGRAY);
 console.putmsg('Connecting to DoorParty, please wait ...');
 
 try {
-	bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias);
+	if (argv.length >= 4) {
+		bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias, argv[3]);
+	} else {
+		bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias);
+	}
 } catch (err) {
 	log(LOG_ERR, err);
 }
