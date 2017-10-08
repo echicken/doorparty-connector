@@ -134,7 +134,7 @@ You can optionally tell this script to bring the user directly into a particular
 	Multiple Concurrent Users: Yes
 ```
 
-In the above example, 'lord' is a 'door code' that tells DoorParty which game to launch upon connect. [See here](http://wiki.throwbackbbs.com/doku.php?id=doorcode) for a list of valid door codes.
+In the 'Command Line' of the above example, 'lord' is a 'door code' that tells DoorParty which game to launch upon connect. [See here](http://wiki.throwbackbbs.com/doku.php?id=doorcode) for a list of valid door codes.
 
 Synchronet's RLogin gate feature does not allow us to specify a *port* to
 connect to on the RLogin server, so it will always try to connect to port 513.
