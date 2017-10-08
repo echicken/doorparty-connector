@@ -20,7 +20,18 @@ console.clear(LIGHTGRAY);
 console.putmsg('Connecting to DoorParty, please wait ...');
 
 try {
-	if (argv.length >= 4) {
+	if (file_exists(system.ctrl_dir + 'sbbs-dp-rlogin.ini')) {
+		var f = new File(system.ctrl_dir + 'sbbs-dp-rlogin.ini');
+		f.open('r');
+		var ini = f.iniGetObject();
+		f.close();
+		bbs.rlogin_gate(
+			ini.tunnel_host,
+			ini.password,
+			format('[%s]%s', ini.system_tag.replace(/[\[\]]/g, ''), user.alias),
+			argv[0]
+		);
+	} else if (argv.length >= 4) {
 		bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias, argv[3]);
 	} else {
 		bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias);
