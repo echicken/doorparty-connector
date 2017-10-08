@@ -21,6 +21,7 @@ console.putmsg('Connecting to DoorParty, please wait ...');
 
 try {
 	if (file_exists(system.ctrl_dir + 'sbbs-dp-rlogin.ini')) {
+		var dc = (typeof argv[0] === 'undefined' ? '' : argv[0]);
 		var f = new File(system.ctrl_dir + 'sbbs-dp-rlogin.ini');
 		f.open('r');
 		var ini = f.iniGetObject();
@@ -29,7 +30,7 @@ try {
 			ini.tunnel_host,
 			ini.password,
 			format('[%s]%s', ini.system_tag.replace(/[\[\]]/g, ''), user.alias),
-			argv[0]
+			dc
 		);
 	} else if (argv.length >= 4) {
 		bbs.rlogin_gate(argv[0], argv[1], argv[2] + user.alias, argv[3]);
