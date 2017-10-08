@@ -109,20 +109,32 @@ to launch DoorParty Connector and keep it running.
 
 - Place a copy of [sbbs-dp-rlogin.js](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.js?raw=true) in your Synchronet 'mods' directory
 	- If you do not already have a 'mods' directory, create one at the top level of your Synchronet BBS installation (alongside 'ctrl', 'data', 'exec', etc.)
+- Place a copy of [sbbs-dp-rlogin.ini](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.ini?raw=true) in your Synchronet 'ctrl' directory
+	- Edit sbbs-dp-rlogin.ini
+		- Set 'password' is a random password of your choosing.  This has no relation to any password given to you by the DoorParty administrator.
+		- Set 'tag' to the system tag given to you by the DoorParty administrator, without the [ or ] characters
 
 - In SCFG, create an external program:
 
 ```
 	Name: DoorParty
 	Internal Code: DOORPRTY
-	Command Line: ?sbbs-dp-rlogin.js localhost password [tag]
+	Command Line: ?sbbs-dp-rlogin.js
 	Multiple Concurrent Users: Yes
 ```
 
-- In the *Command Line* field:
-	- Replace 'password' with a random password of your own choosing
-	- Replace [tag] with your own DoorParty BBS tag, including square brackets
 - All other settings can be left at their default values.
+
+You can optionally tell this script to bring the user directly into a particular door like so:
+
+```
+	Name: DoorParty LORD
+	Internal Code: DPLORD
+	Command Line: ?sbbs-dp-rlogin.js lord
+	Multiple Concurrent Users: Yes
+```
+
+In the above example, 'lord' is a 'door code' that tells DoorParty which game to launch upon connect. [See here](http://wiki.throwbackbbs.com/doku.php?id=doorcode) for a list of valid door codes.
 
 Synchronet's RLogin gate feature does not allow us to specify a *port* to
 connect to on the RLogin server, so it will always try to connect to port 513.
