@@ -8,7 +8,7 @@ I can't imagine a use for it other than connecting an RLogin client to
 [DoorParty](http://wiki.throwbackbbs.com/doku.php), but it could conceivably be
 used with any remote SSH & RLogin server.
 
-##Windows Setup
+## Windows Setup
 
 [An installer is available](https://github.com/echicken/doorparty-connector/blob/master/dpc-installer.exe?raw=true)
 for Windows users.  This will download the latest copy of
@@ -28,10 +28,10 @@ on, you can simply run the installer again, or edit
 C:\Program Files (x86)\DoorParty Connector\settings.json
 to make changes manually.
 
-An uninstaller is provided at 
+An uninstaller is provided at
 C:\Program Files (x86)\DoorParty Connector\uninstall.exe.
 
-##Manual Setup
+## Manual Setup
 
 If you're not running Windows, or if the installer fails for some reason, manual
 installation is also possible.
@@ -44,9 +44,9 @@ Place them in the same directory, edit *settings.json* as necessary, and then
 launch *doorparty-connector.exe*.  Otherwise, follow these next steps:
 
 
-###Prepare
+### Prepare
 
-You'll need to have node.js and npm installed on your system in order to use 
+You'll need to have node.js and npm installed on your system in order to use
 this application.  It should work with node.js versions 4.x and greater, and
 should run equally well on Windows, Linux, OS X, or anywhere else that node.js
 runs.
@@ -62,7 +62,7 @@ unzip doorparty-connector-master.zip
 mv doorparty-connector-master doorparty-connector
 ```
 
-###Install
+### Install
 
 Now we can proceed:
 ```sh
@@ -70,11 +70,11 @@ cd doorparty-connector
 npm install
 ```
 
-###Configure
+### Configure
 
 Open *settings.json* in a text editor, and you'll see something like this:
-
-```js
+js
+```
 {
 	"username" : "doorparty_ssh_username",
 	"password" : "doorparty_ssh_password",
@@ -92,7 +92,7 @@ Open *settings.json* in a text editor, and you'll see something like this:
 - Change *port* to whatever port you wish to accept RLogin connections *from your BBS* on
 - The other settings can remain the same, unless DoorParty's remote configuration changes at some point
 
-###Run
+### Run
 
 If you're listening to port 513 on the local machine, you'll either need to run
 with superuser privileges or work some redirection magic on the back end.
@@ -182,5 +182,5 @@ connect you to DoorParty or to a door party or a party of doors or a party for
 door game players.
 
 The author of this software is not the owner, operator, or administrator of
-DoorParty.  If you have questions about DoorParty, contact maskreet on 
+DoorParty.  If you have questions about DoorParty, contact maskreet on
 [Throwback BBS](http://www.throwbackbbs.com/).
