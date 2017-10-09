@@ -112,7 +112,7 @@ to launch DoorParty Connector and keep it running.
 - Place a copy of [sbbs-dp-rlogin.ini](https://github.com/echicken/doorparty-connector/blob/master/sbbs-dp-rlogin.ini?raw=true) in your Synchronet 'ctrl' directory
 	- Edit sbbs-dp-rlogin.ini
 		- Set 'password' is a random password of your choosing.  This has no relation to any password given to you by the DoorParty administrator.
-		- Set 'tag' to the system tag given to you by the DoorParty administrator, without the [ or ] characters
+		- Set 'system_tag' to the system tag given to you by the DoorParty administrator, without the [ or ] characters
 
 - In SCFG, create an external program:
 
