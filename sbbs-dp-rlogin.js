@@ -1,16 +1,24 @@
-/*	Copy to Synchronet 'mods' directory
-	In SCFG, create an external program:
-
-	Name: DoorParty
-	Internal Code: DOORPRTY
-	Command Line: ?sbbs-dp-rlogin.js localhost password [tag]
-	Multiple Concurrent Users: Yes
-
-	In the 'Command Line':
-	- Replace 'password' with a random password of your own choosing
-	- Replace [tag] with your own DoorParty BBS tag, including square brackets
-
-	All other settings can be left at their default values.
+/*	- Copy sbbs-dp-rlogin.ini to your Synchronet 'ctrl' directory
+	- Edit sbbs-dp-rlogin.ini
+		- Set 'password' to a random password of your choosing
+		- Set 'system_tag' to the system tag provided by the DoorParty administrator
+	- Copy sbbs-dp-rlogin.js to your Synchronet 'mods' directory
+	- In SCFG, create an external program:
+		- Name: DoorParty
+		- Internal Code: DOORPRTY
+		- Command Line: ?sbbs-dp-rlogin.js
+		- Multiple Concurrent Users: Yes
+	    - All other settings can be left at their default values.
+	- Optionally create 'direct' entries for particular door games:
+		- In SCFG, create an external program:
+			- Name: DoorParty LORD
+			- Internal Code: DPLORD
+			- Command Line: ?sbbs-dp-rlogin.js lord
+			- Multiple Concurrent Users: Yes
+		    - All other settings can be left at their default values.
+		- In 'Command Line' above, 'lord' is a 'door code' that tells DoorParty
+		  which game to launch upon connect.  For more door codes, see here:
+		  http://wiki.throwbackbbs.com/doku.php?id=doorcode
 */
 
 load('sbbsdefs.js');
