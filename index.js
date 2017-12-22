@@ -39,20 +39,20 @@ function onRlogin(client, rlogin) {
 				)
 			);
 		}
-		
+
 		client.on(
-			'data', (data) => { stream.write(data, 'binary'); }
+			'data', function (data) { stream.write(data, 'binary'); }
 		);
-		
+
 		stream.on(
-			'error', (err) => { console.log('Stream error', err); }
+			'error', function (err) { console.log('Stream error', err); }
 		);
-		
+
 		stream.on(
-			'data', (data) => { client.write(data, 'binary'); }
+			'data', function (data) { client.write(data, 'binary'); }
 		);
-		
-		stream.on('close', () => { sshTunnel.end(); });
+
+		stream.on('close', function () { sshTunnel.end(); });
 
 		console.log(
 			util.format(
@@ -60,8 +60,8 @@ function onRlogin(client, rlogin) {
 				str[2], settings.RLoginServer, settings.RLoginPort
 			)
 		);
-		
-		stream.write(rlogin, 'binary');		
+
+		stream.write(rlogin, 'binary');
 
 	}
 
@@ -70,31 +70,31 @@ function onRlogin(client, rlogin) {
 			settings.interface, settings.SSHPort,
 			settings.RLoginServer, settings.RLoginPort,
 			onTunnel
-		);		
+		);
 	}
 
 	client.on(
-		'close', () => {
+		'close', function () {
 			console.log('Client session for ' + str[2] + ' closed');
 			sshTunnel.end();
 		}
 	);
 
 	sshTunnel.on(
-		'error', (err) => {
+		'error', function (err) {
 			console.log('SSH tunnel for ' + str[2] + ' error', err);
 		}
 	);
-	
+
 	sshTunnel.on(
-		'close', () => {
+		'close', function () {
 			console.log('SSH Tunnel for ' + str[2] + ' closed');
 			client.end();
 		}
 	);
-	
+
 	sshTunnel.on('ready', onReady);
-	
+
 	sshTunnel.connect(
 		{	host: settings.SSHServer,
 			port: settings.SSHPort,
@@ -106,16 +106,16 @@ function onRlogin(client, rlogin) {
 }
 
 function onClient(client) {
-	client.on('error', (err) => { console.log('Client error', err); });
-	client.once('data', (data) => { onRlogin(client, data); });
+	client.on('error', function (err) { console.log('Client error', err); });
+	client.once('data', function (data) { onRlogin(client, data); });
 	console.log('Client connected');
 }
 
 const server = net.createServer(onClient);
-server.on('error', (err) => { console.log('Server error', err); });
+server.on('error', function (err) { console.log('Server error', err); });
 server.listen(
 	{ host : settings.interface, port : settings.port },
-	() => {
+	function () {
 		console.log('Listening on ' + settings.interface + ':' + settings.port);
 	}
 );
