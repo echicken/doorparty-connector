@@ -1,16 +1,16 @@
 {
 	"name": "doorparty-connector",
-	"version": "1.0.0",
-	"license" : "Shareware :|",
-	"description" : "Connect to DoorParty via RLogin through an SSH tunnel",
-	"author" : {
-		"name" : "echicken",
-		"email" : "echicken@bbs.electronicchicken.com"
+	"version": "2.0.0",
+	"license": "Shareware :|",
+	"description": "Connect to DoorParty via RLogin through an SSH tunnel",
+	"author": {
+		"name": "echicken",
+		"email": "echicken@bbs.electronicchicken.com"
 	},
 	"dependencies": {
-		"ssh2" : "0.5.2"
+		"ssh2": "0.6.1"
 	},
-	"engines" : {
-		"node" : ">= 4.2.2"
+	"engines": {
+		"node": ">= 6.4.0"
 	}
 }
