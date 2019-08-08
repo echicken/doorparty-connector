@@ -1,3 +1,5 @@
+This project will be retired soon.  You can find its replacement [here](https://github.com/echicken/dpc2).
+
 # doorparty-connector
 
 This script listens for connections from RLogin clients, then establishes an SSH
@@ -174,7 +176,7 @@ offer, or use an external program (door) that provides this functionality.  Tell
 it to connect to the *interface* and *port* that you have specified in
 *settings.json*.
 
-##Notes
+## Notes
 
 These instructions assume that you want to run DoorParty Connector on the same
 machine that is hosting your BBS.  There is however no technical requirement
