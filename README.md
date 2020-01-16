@@ -1,4 +1,6 @@
-# Deprecated and replaced by [DoorParty Connector v2](https://github.com/echicken/dpc2).
+# This project has been retired
+
+It has been replaced by [DoorParty Connector v2](https://github.com/echicken/dpc2).
 
 ## doorparty-connector
 
